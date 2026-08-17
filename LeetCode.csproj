@@ -46,5 +46,14 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleMe\src\ConsoleMe\ConsoleMe.csproj">
+      <Project>{17943a4c-8755-0a17-4ee2-2b9a8ca79448}</Project>
+      <Name>ConsoleMe</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\upgrades\scenarios\dotnet-version-upgrade\scenario-instructions.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../../../ConsoleMe/src/ConsoleMe/ConsoleMe.csproj" />
+  <Project Path="../LeetCode.Console/LeetCode.Console.csproj" />
+  <Project Path="../LeetCode.Test/LeetCode.Test.csproj" />
+  <Project Path="LeetCode.csproj" />
+</Solution>
