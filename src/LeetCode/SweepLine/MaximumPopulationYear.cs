@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 /*
 You are given a 2D integer array logs where each logs[i] = [birthi, deathi] indicates the birth and death years of the ith person.
@@ -30,10 +31,41 @@ Constraints:
 */
 namespace LeetCode.SweepLine
 {
-    [Prompt]
+    [Prompt(nameof(MaximumPopulationYear))]
     //https://leetcode.com/problems/maximum-population-year/description/?envType=problem-list-v2&envId=mzw3cyy6
     class MaximumPopulationYear
     {
+        class Event : IComparable<Event>
+        {
+            public int year;
+            public bool isStart;
 
+            public int CompareTo(Event eventOther)
+            {
+                return eventOther.year.CompareTo(this.year);
+            }
+        }
+
+        public static int Solution()
+        {
+            int[][] logs =
+            {
+                [1993, 1999],
+                [2000, 2010]
+            };
+
+            Event[] events = new Event[logs.Length * 2];
+
+            for (int i = 0; i < logs.Length; i++) 
+            {
+                events[2 * i] = new Event{ year = logs[i][0], isStart = true };
+                events[2 * i + 1] = new Event { year = logs[i][1], isStart = false };
+            }
+
+            Array.Sort(events);
+
+            return 0;
+
+        }
     }
 }
